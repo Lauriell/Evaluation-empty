@@ -40,10 +40,17 @@ public class SnakeController : MonoBehaviour
 
     void Die()
     {
-        while (isAlive == true)
+        isAlive = false;
+        Instantiate(GameObject.Find("GameOverCanvas"));
+        // if (GameObjet.FindGameObjectsWithTag("PlayZone").isTrigger = false)
         {
-            return;
+            Die();
         }
-      Instantiate(GameObject.Find("GameOverCanvas"));
+        Destroy(tail.GetChild(0)gameObject) ;
+        Destroy(gameObject);
+        if (tail.GetChild(0).istrigger)
+        {
+            Destroy(gameObject);
+        }
     }
 }
